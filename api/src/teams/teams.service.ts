@@ -13,7 +13,7 @@ export class TeamsService {
   ) {}
 
   getTeams(filterDto: GetTeamsFilterDto): Promise<Team[]> {
-    return this.teamsRepository.getTasks(filterDto);
+    return this.teamsRepository.getTeams(filterDto);
   }
 
   async getTeamById(id: string): Promise<Team> {
@@ -27,7 +27,7 @@ export class TeamsService {
   }
 
   createTeam(createTaskDto: CreateTeamDto): Promise<Team> {
-    return this.teamsRepository.createTask(createTaskDto);
+    return this.teamsRepository.createTeam(createTaskDto);
   }
 
   async deleteTeam(id: string): Promise<void> {

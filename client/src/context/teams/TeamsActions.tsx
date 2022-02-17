@@ -7,8 +7,6 @@ const api = axios.create({
 })
 
 export const getTeams = async () => {
-  console.log("trying")
   const res = await api.get('/teams')
-  console.log("res", res)
   return res.data
 } 

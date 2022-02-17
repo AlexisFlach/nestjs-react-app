@@ -5,7 +5,7 @@ import { Team } from './team.entity';
 
 @EntityRepository(Team)
 export class TeamsRepository extends Repository<Team> {
-  async getTasks(filterDto: GetTeamsFilterDto): Promise<Team[]> {
+  async getTeams(filterDto: GetTeamsFilterDto): Promise<Team[]> {
     const { search } = filterDto;
 
     const query = this.createQueryBuilder('team');
@@ -21,8 +21,8 @@ export class TeamsRepository extends Repository<Team> {
     return teams;
   }
 
-  async createTask(createTaskDto: CreateTeamDto): Promise<Team> {
-    const { name, nation } = createTaskDto;
+  async createTeam(createTeamDto: CreateTeamDto): Promise<Team> {
+    const { name, nation } = createTeamDto;
 
     const task = this.create({
       name,
