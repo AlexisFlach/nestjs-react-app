@@ -1,5 +1,4 @@
-import Teams from '../components/Teams/TeamsList'
-
+import Teams from '../components/Teams/Teams'
 
 const Home = () => {
 
