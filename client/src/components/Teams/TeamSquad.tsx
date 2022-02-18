@@ -1,11 +1,11 @@
-import { useState, useEffect, useContext } from 'react'
+import { useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { getTeamSquad } from '../../context/teams/TeamsActions'
 import TeamsContext from '../../context/teams/TeamsContext'
 
 const TeamSquad = () => {
 
-  const { state, dispatch } = useContext(TeamsContext)
+  const { dispatch } = useContext(TeamsContext)
 
   const params = useParams()
 
@@ -15,7 +15,8 @@ const TeamSquad = () => {
       dispatch({ type: 'GET_SQUAD', payload: teams })
     }
     fetchSquad()
-  }, [dispatch])
+  }, [params.id, dispatch])
+
   return (
     <div>TeamSquad</div>
   )
