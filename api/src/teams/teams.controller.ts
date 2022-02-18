@@ -7,6 +7,7 @@ import {
   Post,
   Query,
 } from '@nestjs/common';
+import { Player } from 'src/players/player.entity';
 import { CreateTeamDto } from './dto/create-teams.dto';
 import { GetTeamsFilterDto } from './dto/get-teams-filter.dto';
 import { Team } from './team.entity';
@@ -23,6 +24,10 @@ export class TeamsController {
   @Get('/:id')
   getTeamById(@Param('id') id: string): Promise<Team> {
     return this.teamsService.getTeamById(id);
+  }
+  @Get('/:id/squad')
+  getTeamSquadById(@Param('id') id: string): Promise<Player[]> {
+    return this.teamsService.getSquad(id);
   }
   @Post()
   createTeam(@Body() createTeamDto: CreateTeamDto): Promise<Team> {

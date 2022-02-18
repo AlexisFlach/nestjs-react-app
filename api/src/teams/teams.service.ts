@@ -5,6 +5,7 @@ import { GetTeamsFilterDto } from './dto/get-teams-filter.dto';
 import { TeamsRepository } from './teams.repository';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Team } from './team.entity';
+import { Player } from 'src/players/player.entity';
 
 @Injectable()
 export class TeamsService {
@@ -24,6 +25,10 @@ export class TeamsService {
     }
 
     return found;
+  }
+
+  getSquad(id: string): Promise<Player[]> {
+    return this.teamsRepository.getSquad(id);
   }
 
   createTeam(createTaskDto: CreateTeamDto): Promise<Team> {

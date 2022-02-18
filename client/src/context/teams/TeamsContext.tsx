@@ -14,10 +14,12 @@ export interface TeamCtx {
 }
 
 const initialState: State = {
-  teams: []
+  teams: [],
+  squad: []
 }
 export interface State {
-  teams: ITeam[]
+  teams: ITeam[],
+  squad: any[]
 }
 
 export const TeamsProvider:React.FC = ({children}) => {

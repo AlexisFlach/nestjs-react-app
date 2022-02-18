@@ -1,4 +1,5 @@
-import { EntityRepository, Repository } from 'typeorm';
+import { Player } from 'src/players/player.entity';
+import { EntityRepository, getRepository, Repository } from 'typeorm';
 import { CreateTeamDto } from './dto/create-teams.dto';
 import { GetTeamsFilterDto } from './dto/get-teams-filter.dto';
 import { Team } from './team.entity';
@@ -19,6 +20,16 @@ export class TeamsRepository extends Repository<Team> {
 
     const teams = await query.getMany();
     return teams;
+  }
+
+  async getSquad(id: string): Promise<Player[]> {
+    const players = getRepository(Player)
+    .createQueryBuilder("player")
+    .leftJoinAndSelect(Team, "team", "team.id = player.teamId")
+    .where("team.id = :id", {id})
+    .getMany();
+
+    return players;
   }
 
   async createTeam(createTeamDto: CreateTeamDto): Promise<Team> {
