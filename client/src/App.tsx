@@ -10,7 +10,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/team/:id/squad' element={<TeamSquad />} />
+       
       </Routes>
     </Router>
   </TeamsProvider>

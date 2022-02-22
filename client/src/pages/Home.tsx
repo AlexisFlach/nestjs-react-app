@@ -4,7 +4,8 @@ const Home = () => {
 
   return (
     <div>
-      <Teams />
+      hi
+     <Teams />
     </div>
   )
 }
