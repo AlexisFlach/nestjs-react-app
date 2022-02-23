@@ -1,20 +1,24 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import Home from './pages/Home'
+import Home from './pages/Home/Home'
 import { TeamsProvider } from './context/teams/TeamsContext';
-import TeamSquad from "./components/Teams/TeamSquad";
+import Layout from './components/Layout/mainpage/Mainpage'
+import Header from "./components/Layout/header/Header";
 
 const App = () => {
   return (
-  <>
-  <TeamsProvider>
-    <Router>
-      <Routes>
-        <Route path='/' element={<Home />} />
-       
-      </Routes>
-    </Router>
-  </TeamsProvider>
-  </>
+    <>
+      <TeamsProvider>
+        <Router>
+          <Layout>
+            <Header />
+            <Routes>
+              <Route path='/' element={<Home />} />
+            </Routes>
+          </Layout>
+        </Router>
+
+      </TeamsProvider>
+    </>
   )
 }
 
