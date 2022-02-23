@@ -1,9 +1,16 @@
 import { IsNotEmpty } from 'class-validator';
-import { Nation } from '../team-nation.enum';
 
 export class CreateTeamDto {
   @IsNotEmpty()
   name: string;
+  
+  fullname: string;
+
+  nickname: string;
+
   @IsNotEmpty()
-  nation: Nation;
+  nation: string;
+
+  @IsNotEmpty()
+  stadium: string;
 }

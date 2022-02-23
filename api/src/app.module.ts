@@ -8,7 +8,7 @@ import { PlayersModule } from './players/players.module';
     TeamsModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: 'postgres_db',
       port: 5432,
       username: 'postgres',
       password: 'postgres',

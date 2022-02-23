@@ -17,7 +17,7 @@ const Teams = () => {
 
   return (
     <div>
-      Hello
+      hello
       {state.teams.map((team: ITeam) => (
         <TeamItem key={team.id}team={team} />
       ))}</div>

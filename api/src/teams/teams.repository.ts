@@ -33,11 +33,15 @@ export class TeamsRepository extends Repository<Team> {
   }
 
   async createTeam(createTeamDto: CreateTeamDto): Promise<Team> {
-    const { name, nation } = createTeamDto;
+    const { name, nation, fullname, nickname, stadium } = createTeamDto;
 
     const task = this.create({
       name,
       nation,
+      fullname,
+      nickname,
+      stadium
+
     });
 
     await this.save(task);

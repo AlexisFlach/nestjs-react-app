@@ -1,6 +1,5 @@
 import { Player } from 'src/players/player.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { Nation } from './team-nation.enum';
 
 @Entity()
 export class Team {
@@ -8,8 +7,14 @@ export class Team {
   id: string;
   @Column()
   name: string;
+  @Column({ default: ""})
+  fullname: string;
+  @Column({default: ""})
+  nickname: string;
   @Column()
-  nation: Nation;
+  stadium: string;
   @OneToMany(() => Player, player => player.team)
     players: Player[];
+  @Column()
+  nation: string;
 }
