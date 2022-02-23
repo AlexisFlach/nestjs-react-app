@@ -1,8 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import Home from './pages/Home/Home'
+
 import { TeamsProvider } from './context/teams/TeamsContext';
-import Layout from './components/Layout/mainpage/Mainpage'
+import Layout from './components/Layout/mainpage/Layout'
 import Header from "./components/Layout/header/Header";
+import HomePage from "./views/home/homePage/HomePage";
+import LoginPage from "./views/login/loginPage/LoginPage";
 
 const App = () => {
   return (
@@ -12,11 +14,11 @@ const App = () => {
           <Layout>
             <Header />
             <Routes>
-              <Route path='/' element={<Home />} />
+              <Route path='/' element={<HomePage />} />
+              <Route path='/login' element={<LoginPage />} />
             </Routes>
           </Layout>
         </Router>
-
       </TeamsProvider>
     </>
   )

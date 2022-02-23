@@ -1,8 +1,17 @@
-import { BoxDiv } from "./Box.styled"
-
+import { BoxDiv, LinkText } from "./Box.styled"
+import {Link} from 'react-router-dom'
 const Box = () => {
   return (
-    <BoxDiv>Box</BoxDiv>
+
+    
+    <Link to="/login">
+    <BoxDiv>
+      Go
+   </BoxDiv>
+    </Link>
+    
+    
+    
   )
 }
 
