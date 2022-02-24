@@ -2,13 +2,14 @@ import { Module } from '@nestjs/common';
 import { TeamsModule } from './teams/teams.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PlayersModule } from './players/players.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
     TeamsModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'postgres_db',
+      host: 'localhost', // postgres_db
       port: 5432,
       username: 'postgres',
       password: 'postgres',
@@ -17,6 +18,7 @@ import { PlayersModule } from './players/players.module';
       synchronize: true,
     }),
     PlayersModule,
+    AuthModule,
   ],
   controllers: [],
   providers: [],

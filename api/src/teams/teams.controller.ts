@@ -6,14 +6,18 @@ import {
   Param,
   Post,
   Query,
+  UseGuards,
 } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { Player } from 'src/players/player.entity';
 import { CreateTeamDto } from './dto/create-teams.dto';
 import { GetTeamsFilterDto } from './dto/get-teams-filter.dto';
 import { Team } from './team.entity';
 import { TeamsService } from './teams.service';
 
+
 @Controller('teams')
+@UseGuards(AuthGuard())
 export class TeamsController {
   constructor(private teamsService: TeamsService) {}
 
