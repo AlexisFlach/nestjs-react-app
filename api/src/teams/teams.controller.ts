@@ -17,7 +17,6 @@ import { TeamsService } from './teams.service';
 
 
 @Controller('teams')
-@UseGuards(AuthGuard())
 export class TeamsController {
   constructor(private teamsService: TeamsService) {}
 

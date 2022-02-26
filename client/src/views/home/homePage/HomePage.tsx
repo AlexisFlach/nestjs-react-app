@@ -1,13 +1,13 @@
-import Box from '../../../components/boxes/box/Box'
-import { GridContainer, Grid } from './HomePage.styled'
-
+import { Box } from "../../../components/box"
+import {GridContainer, Grid } from './HomePage.styled'
 const HomePage = () => {
 
   return (
     <GridContainer>
       <Grid>
-      <Box />
-      </Grid>
+    <Box to="/login">Login</Box>
+    <Box to="/register">Register</Box>
+    </Grid>
     </GridContainer>
   )
 }

@@ -6,7 +6,7 @@ import TeamItem from './TeamItem'
 
 const Teams = () => {
   const { state, dispatch } = useContext(TeamsContext)
-
+  console.log(dispatch)
   useEffect(() => {
     async function fetchTeams() {
       const teams = await getTeams();

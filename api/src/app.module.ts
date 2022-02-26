@@ -9,7 +9,7 @@ import { AuthModule } from './auth/auth.module';
     TeamsModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost', // postgres_db
+      host: 'localhost', // 
       port: 5432,
       username: 'postgres',
       password: 'postgres',
